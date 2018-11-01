@@ -36,10 +36,10 @@ dependencies {
     implementation deps.kotlin.stdLibJDK7
     implementation deps.kotlin.stdLib
 
-
     //....................................ARCH...............................................
 
     implementation deps.android.lifecycleExtensions
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     kapt deps.android.lifecycleCompiler
     implementation deps.android.lifecycleReactiveStreams
     implementation deps.android.roomRuntime
@@ -57,7 +57,7 @@ dependencies {
 
     //....................... Local Unit Tests..............................................
 
-    testImplementation deps.test.values()
+    testImplementation deps.unitTesting.values()
 
     //------------------------Local Unit Tests................................................
 
@@ -72,7 +72,6 @@ dependencies {
     implementation deps.rx.values()
 
     //------------------------------Rx------------------------------------------------------
-
 
     //.......................Dagger.......................................................
 
@@ -96,5 +95,3 @@ kotlin {
         coroutines "enable"
     }
 }
-
-

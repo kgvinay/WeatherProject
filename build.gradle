@@ -28,6 +28,9 @@ buildscript {
             'coroutinesVersion'                : '0.22.5',
             'lifecycleVersion'                 : '1.1.1',
             'mockitoCoreVersion'               : '1.10.19',
+            'kluentVersion'                    : '1.14',
+            'robolectricVersion'               : '4.0.1',
+            'mockitoKotlinVersion'             : '1.4.0'
 
     ]
 
@@ -66,6 +69,15 @@ buildscript {
             test      : [
                     'junit'          : "junit:junit:${versions.junitVersion}",
                     'mockitoCore'    : "org.mockito:mockito-core:${versions.mockitoCoreVersion}",
+            ],
+
+            unitTesting : [
+                    'kotlinTest'     : "org.jetbrains.kotlin:kotlin-test-junit:1.2.50",
+                    'robolectric'    : "org.robolectric:robolectric:${versions.robolectricVersion}",
+                    'junit'          : "junit:junit:${versions.junitVersion}",
+                    'mockito'        : "com.nhaarman:mockito-kotlin:${versions.mockitoKotlinVersion}",
+                    'mockitoCore'    : "org.mockito:mockito-core:${versions.mockitoCoreVersion}",
+                    'kluent'         : "org.amshove.kluent:kluent:${versions.kluentVersion}",
             ],
 
             network   : [
