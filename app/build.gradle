@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        applicationId "com.test.weather"
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.compileSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //      implementation deps.kotlin.values()
+    implementation deps.kotlin.stdLibJDK7
+    implementation deps.kotlin.stdLib
+
+
+    //....................................ARCH...............................................
+
+    implementation deps.android.lifecycleExtensions
+    kapt deps.android.lifecycleCompiler
+    implementation deps.android.lifecycleReactiveStreams
+    implementation deps.android.roomRuntime
+    kapt deps.android.roomCompiler
+    implementation deps.android.roomRxjava2
+    testImplementation deps.android.coreTesting
+
+    //------------------------------------ARCH-----------------------------------------------
+
+    //........................Support Dependencies...........................................
+
+    implementation deps.support.values()
+
+    //--------------------------Support Dependencies------------------------------------------
+
+    //....................... Local Unit Tests..............................................
+
+    testImplementation deps.test.values()
+
+    //------------------------Local Unit Tests................................................
+
+    //........................Networking.................................................
+
+    implementation deps.network.values()
+
+    //------------------------Networking-------------------------------------------------
+
+    //..............................Rx......................................................
+
+    implementation deps.rx.values()
+
+    //------------------------------Rx------------------------------------------------------
+
+
+    //.......................Dagger.......................................................
+
+    implementation deps.dagger.dagger
+    implementation deps.dagger.daggerAndroid
+    kapt deps.dagger.daggerCompiler
+    kapt deps.dagger.daggerAndroidProcessor
+
+    //-----------------------Dagger-------------------------------------------------------
+
+    //...................Android Testing Support Library...................................
+
+    androidTestImplementation deps.supportTest.values()
+
+    //------------------------Android Testing Support Library-------------------------------
+
+
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+
