@@ -5,6 +5,7 @@ import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.test.weather.WeatherApplication
+import com.test.weather.core.functional.ViewModelModule
 import com.test.weather.feature.forecast.WeatherAPI
 import dagger.Module
 import dagger.Provides
@@ -18,7 +19,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 
-@Module
+@Module(includes = [ViewModelModule::class])
 class ApplicationModule {
 
     internal var mBaseUrl = "http://api.apixu.com/v1/"
