@@ -3,8 +3,18 @@ package com.test.weather.feature.forecast.response
 import com.google.gson.annotations.SerializedName
 
 data class ForecastResponse(@SerializedName("current")
-                            val current: Current,
+                            val current: Current?,
                             @SerializedName("location")
-                            val location: Location,
+                            val location: Location?,
                             @SerializedName("forecast")
-                            val forecast: Forecast)
+                            val forecast: Forecast?){
+
+companion object {
+
+    fun empty() = ForecastResponse(null,null,null)
+}
+
+
+
+
+}

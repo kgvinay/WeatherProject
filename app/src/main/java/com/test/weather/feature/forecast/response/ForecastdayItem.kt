@@ -9,4 +9,6 @@ data class ForecastdayItem(@SerializedName("date")
                            @SerializedName("date_epoch")
                            val dateEpoch: Int = 0,
                            @SerializedName("day")
-                           val day: Day)
+                           val day: Day) {
+
+}

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 
-    internal interface WeatherAPI {
+    interface WeatherAPI {
         companion object {
 
             private const val PARAM_KEY  = "c626c1021a5b4206b6d143758180111"
