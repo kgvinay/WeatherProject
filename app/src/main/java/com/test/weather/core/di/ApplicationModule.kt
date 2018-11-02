@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder
 import com.test.weather.WeatherApplication
 import com.test.weather.core.functional.ViewModelModule
 import com.test.weather.feature.forecast.WeatherAPI
+import com.test.weather.feature.forecast.WeatherRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.*
@@ -91,5 +92,7 @@ class ApplicationModule {
                 .build()
                 .create(WeatherAPI::class.java)
     }
+
+    @Provides @Singleton fun provideMoviesRepository(dataSource: WeatherRepository.Network): WeatherRepository = dataSource
 
 }
