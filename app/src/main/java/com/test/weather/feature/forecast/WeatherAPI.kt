@@ -12,7 +12,7 @@ import retrofit2.http.Path
             private const val PARAM_KEY  = "c626c1021a5b4206b6d143758180111"
             private const val PARAM_LOC  = "Bangalore"
             private const val PARAM_DAYS = "4"
-            private const val FORECAST_DETAILS = "forecast.json?key={${PARAM_KEY}&q={${PARAM_LOC}&days={${PARAM_DAYS}"
+            private const val FORECAST_DETAILS = "forecast.json?key=$PARAM_KEY&q=$PARAM_LOC&days=$PARAM_DAYS"
         }
 
         @GET(FORECAST_DETAILS)

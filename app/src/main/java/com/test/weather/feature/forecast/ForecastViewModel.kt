@@ -1,6 +1,7 @@
 package com.test.weather.feature.forecast
 
 import android.arch.lifecycle.MutableLiveData
+import android.util.Log
 import com.test.weather.core.interactor.UseCase
 import com.test.weather.core.platform.BaseViewModel
 import com.test.weather.feature.forecast.response.ForecastResponse
@@ -11,7 +12,9 @@ class ForecastViewModel
 
     var forecast: MutableLiveData<ForecastResponse> = MutableLiveData()
 
-    fun loadForecast() = getForecast(UseCase.None()) { it.either(::handleFailure, ::handleForecastList) }
+
+    fun loadForecast() = getForecast(UseCase.None())
+    { it.either(::handleFailure, ::handleForecastList) }
 
     private fun handleForecastList(forecastResponse: ForecastResponse) {
         forecast.value = forecastResponse

@@ -12,10 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.test.weather.R
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : DaggerFragment() {
 
     abstract fun layoutId(): Int
 

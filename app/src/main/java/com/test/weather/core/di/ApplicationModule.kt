@@ -27,6 +27,12 @@ class ApplicationModule {
 
     @Provides
     @Singleton
+    fun provideContext(application: WeatherApplication): Context {
+        return application.applicationContext
+    }
+
+    @Provides
+    @Singleton
     fun provideHttpCache(application: WeatherApplication) : Cache {
         val cacheSize = 10 * 1024 * 1024
         return Cache(application.cacheDir, cacheSize.toLong())
