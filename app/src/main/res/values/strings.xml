@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">WeatherAPP</string>
     <string name="title_activity_base">BaseActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="failure_network_connection">No Network Connection.</string>
+    <string name="failure_server_error">Server Error</string>
+    <string name="failure_weather_list_unavailable">Weather Unavailable.</string>
+
 </resources>

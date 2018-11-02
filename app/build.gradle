@@ -40,6 +40,7 @@ dependencies {
 
     implementation deps.android.lifecycleExtensions
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:27.1.1'
     kapt deps.android.lifecycleCompiler
     implementation deps.android.lifecycleReactiveStreams
     implementation deps.android.roomRuntime
