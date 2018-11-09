@@ -15,7 +15,7 @@ class ForecastAdapter
 
 
     internal var collection: List<ForecastdayItem> by Delegates.observable(emptyList()) {
-        _, _, _ -> notifyDataSetChanged()
+        prop, _, _ ->    notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

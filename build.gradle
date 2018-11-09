@@ -30,7 +30,8 @@ buildscript {
             'mockitoCoreVersion'               : '1.10.19',
             'kluentVersion'                    : '1.14',
             'robolectricVersion'               : '4.0.1',
-            'mockitoKotlinVersion'             : '1.4.0'
+            'mockitoKotlinVersion'             : '1.4.0',
+            'mockwebserverVersion'             : '2.7.5'
 
     ]
 
@@ -78,6 +79,7 @@ buildscript {
                     'mockito'        : "com.nhaarman:mockito-kotlin:${versions.mockitoKotlinVersion}",
                     'mockitoCore'    : "org.mockito:mockito-core:${versions.mockitoCoreVersion}",
                     'kluent'         : "org.amshove.kluent:kluent:${versions.kluentVersion}",
+                    'mockwebserver'  : "com.squareup.okhttp:mockwebserver:${versions.mockwebserverVersion}"
             ],
 
             network   : [

@@ -1,5 +1,6 @@
 package com.test.weather.feature.forecast
 
+import com.test.weather.feature.forecast.response.Forecast
 import com.test.weather.feature.forecast.response.ForecastResponse
 import retrofit2.Call
 import retrofit2.http.GET

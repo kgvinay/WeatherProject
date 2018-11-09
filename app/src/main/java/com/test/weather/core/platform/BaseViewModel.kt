@@ -10,7 +10,6 @@ abstract class BaseViewModel : ViewModel() {
     var failure: MutableLiveData<Failure> = MutableLiveData()
 
     protected fun handleFailure(failure: Failure) {
-        Log.d("DDGGRE","failure : "+failure)
         this.failure.value = failure
     }
 }

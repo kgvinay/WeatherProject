@@ -20,12 +20,13 @@ import kotlinx.android.synthetic.main.fragment_forecast.*
 import javax.inject.Inject
 import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
-
+import com.test.weather.feature.forecast.response.Forecast
 
 
 class ForecastFragment : BaseFragment() {
 
     private lateinit var forecastViewModel: ForecastViewModel
+
     @Inject
     lateinit var forecastAdapter: ForecastAdapter
 
@@ -42,7 +43,7 @@ class ForecastFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       forecastViewModel.loadForecast()
+        forecastViewModel.loadForecast()
         initializeView()
     }
 
@@ -51,15 +52,14 @@ class ForecastFragment : BaseFragment() {
                 LinearLayoutManager.VERTICAL, false);
         val resId = R.anim.layout_animation_fall_down
         val animation = AnimationUtils.loadLayoutAnimation(activity, resId)
-        rv_forecast_list.setLayoutAnimation(animation);
+        rv_forecast_list.setLayoutAnimation(animation)
         rv_forecast_list.adapter = forecastAdapter
-
-
     }
 
-    private fun updateForecastDetails(forecastResponse: ForecastResponse?) {
-        tv_forecast_temp.setText(""+forecastResponse?.forecast?.forecastday?.first()?.day?.avgtempC+"c")
-        forecastAdapter.collection = forecastResponse?.forecast?.forecastday!!
+    private fun updateForecastDetails(forecastResponse: Forecast?) {
+
+        tv_forecast_temp.setText(""+forecastResponse?.forecastday?.first()?.day?.avgtempC+"c")
+        forecastAdapter.collection = forecastResponse?.forecastday!!
     }
 
 
@@ -72,10 +72,7 @@ class ForecastFragment : BaseFragment() {
     }
 
     private fun renderFailure(@StringRes message: Int) {
-//        movieList.invisible()
-//        emptyView.visible()
-//        hideProgress()
-//        notifyWithAction(message, R.string.action_refresh, ::loadMoviesList)
+//      TODO("Display the Error Screen")
     }
 
 }

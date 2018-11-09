@@ -21,7 +21,7 @@ import javax.inject.Singleton
 
 
 @Module(includes = [ViewModelModule::class])
-class ApplicationModule {
+class ApplicationModule() {
 
     internal var mBaseUrl = "http://api.apixu.com/v1/"
 
@@ -99,6 +99,6 @@ class ApplicationModule {
                 .create(WeatherAPI::class.java)
     }
 
-    @Provides @Singleton fun provideMoviesRepository(dataSource: WeatherRepository.Network): WeatherRepository = dataSource
+    @Provides @Singleton fun provideWeatherRepository(dataSource: WeatherRepository.Network): WeatherRepository = dataSource
 
 }

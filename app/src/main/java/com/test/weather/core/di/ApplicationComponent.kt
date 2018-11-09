@@ -23,6 +23,7 @@ interface ApplicationComponent : AndroidInjector<DaggerApplication> {
 
         @BindsInstance
         fun application(application: WeatherApplication): Builder
+        
 
     }
 

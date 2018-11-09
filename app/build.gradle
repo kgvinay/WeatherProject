@@ -80,6 +80,10 @@ dependencies {
     implementation deps.dagger.daggerAndroid
     kapt deps.dagger.daggerCompiler
     kapt deps.dagger.daggerAndroidProcessor
+    kaptTest deps.dagger.dagger
+    testImplementation deps.dagger.dagger
+    kaptAndroidTest deps.dagger.daggerCompiler
+    kaptAndroidTest deps.dagger.daggerAndroidProcessor
 
     //-----------------------Dagger-------------------------------------------------------
 
